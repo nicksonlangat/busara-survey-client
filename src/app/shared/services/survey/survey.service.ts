@@ -14,7 +14,7 @@ export class SurveyService {
 
   postAnswers(payload:any){
     return this.http.post(
-      "http://fullstack-role.busara.io/api/v1/recruitment/answers/submit/",
+      "https://fullstack-role.busara.io/api/v1/recruitment/answers/submit/",
       payload
     )
   }
