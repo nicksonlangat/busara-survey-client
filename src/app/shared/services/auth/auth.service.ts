@@ -18,11 +18,9 @@ export class AuthService {
 
   //handles login
   getToken(data:any){
-    const headers = new HttpHeaders({ 
-      'Content-Type': 'application/x-www-form-urlencoded',
-   });
+    
     return this.http.post(
-     'http://fullstack-role.busara.io/api/v1/oauth/token/',data,
+     'https://fullstack-role.busara.io/api/v1/oauth/token/',data,
      {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/x-www-form-urlencoded')
