@@ -1,0 +1,85 @@
+<br>
+<div class="flex max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+    <div class="hidden bg-cover lg:block lg:w-1/2" style="background-color:#04009A;">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3 class="text-center underline uppercase text-white font-black">Busara Center</h3>
+        <br>
+        <h4 class="text-white underline uppercase text-center">for</h4>
+        <br>
+        <h3 class="text-white underline uppercase text-center">Behavioral Economics</h3>
+
+    </div>
+
+    <div class="w-full px-6 py-8 md:px-8 lg:w-1/2">
+        <h2 class="text-2xl font-semibold text-center text-gray-700 dark:text-white">BUSARA CENTER</h2>
+
+        <p class="text-xl text-center text-gray-600 dark:text-gray-200">Join us today.</p>
+
+
+
+        <div class="flex items-center justify-between mt-4">
+            <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+
+            <a href="#" class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">Fill the form below</a>
+
+            <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+        </div>
+
+        <form *ngIf="form" [formGroup]="form" (submit)="submit()">
+
+            <div class="mt-4">
+                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="LoggingEmailAddress">Email Address</label>
+                <input formControlName="email" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 
+                 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="email">
+            </div>
+            <div class="mt-4">
+                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="LoggingEmailAddress">Full name</label>
+                <input formControlName="full_name" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 
+                 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="text">
+            </div>
+            <div class="mt-4">
+                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="LoggingEmailAddress">Phone Number</label>
+                <input formControlName="phone_number" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 
+                 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="tel">
+            </div>
+            <div class="mt-4">
+                <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="LoggingEmailAddress">Location</label>
+                <input formControlName="location" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 
+                 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="text">
+            </div>
+
+            <div class="mt-4">
+                <div class="flex justify-between">
+                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="loggingPassword">Password</label>
+
+                </div>
+
+                <input formControlName="password1" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                    type="password">
+            </div>
+            <div class="mt-4">
+                <div class="flex justify-between">
+                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="loggingPassword">Confirm Password</label>
+
+                </div>
+
+                <input formControlName="password2" class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                    type="password">
+            </div>
+
+            <div class="mt-8">
+                <button class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-800 rounded hover:bg-gray-600 focus:outline-none focus:bg-blue-600">
+                    Register
+                </button>
+            </div>
+        </form>
+
+        <div class="flex items-center justify-between mt-4">
+            <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+
+            <a href="/login" class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline">Already registered? Login</a>
+
+            <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+        </div>
+    </div>
+</div>
