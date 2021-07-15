@@ -35,7 +35,7 @@ export class AuthService {
     const ref=localStorage.getItem('refresh_token')
     const payload = `grant_type=refresh_token&client_secret=Zv19oWmm416sTyjWT5Sx2r1gRwjWrXU3P5dWledQpYjxEvavS58SPtz03M8wvsgajaVLhcimmJIUUYUDad06V6HQosmPoj3TPRNjg7bgniQlooIwyFWfz8KfkM5Tdh7R&client_id=zVs3J7FZupB3TLPskQOy1xHLwYTRkzUSf2rdTDCu&refresh_token=${ref}`
     return this.getToken(payload).subscribe(res=>{
-      // console.log(res['access_token'])
+      console.log(res['access_token'])
       this.token=res['access_token']
       this.refresh_token=res['refresh_token']
       localStorage.setItem('auth_token', this.token)

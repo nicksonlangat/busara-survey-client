@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { SurveyService } from 'src/app/shared/services/survey/survey.service';
 
 
@@ -19,12 +20,12 @@ export class SurveyComponent implements OnInit {
   token=localStorage.getItem('auth_token')
   constructor(
     private survey:SurveyService, 
+    private auth:AuthService,
     private formBuilder: FormBuilder,private router:Router){ 
 
     }
 
   ngOnInit(): void {
-
     if (this.token==null){
       this.router.navigate(['/login'])
     }
