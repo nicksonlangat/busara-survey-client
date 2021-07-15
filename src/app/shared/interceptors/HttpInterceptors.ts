@@ -28,6 +28,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           console.log(error)
           this.auth.refresh()
+          window.location.reload();
         }
         return throwError(error);
       }),
