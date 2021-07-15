@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { AuthService } from '../services/auth/auth.service';
 @Injectable({
   providedIn: 'root',
 })
 export class HttpConfigInterceptor implements HttpInterceptor {
-  constructor() { }
+  constructor(private auth:AuthService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string = localStorage.getItem('auth_token');
     if (token) {
@@ -24,8 +25,9 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         if (error.status === 500) {
             console.log(error.status)
         }
-        if (error.status === 403) {
+        if (error.status === 401) {
           console.log(error)
+          this.auth.refresh()
         }
         return throwError(error);
       }),

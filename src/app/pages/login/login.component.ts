@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   submitted = false;
   token:any;
+  refresh_token:any;
   showError=false
 
   constructor(
@@ -42,7 +43,9 @@ export class LoginComponent implements OnInit {
     return this.auth.getToken(payload).subscribe(res=>{
       // console.log(res['access_token'])
       this.token=res['access_token']
+      this.refresh_token=res['refresh_token']
       localStorage.setItem('auth_token', this.token)
+      localStorage.setItem('refresh_token', this.refresh_token)
        this.router.navigate(['/survey'])
     },
     err => {
