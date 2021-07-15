@@ -29,7 +29,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           console.log(error)
           this.auth.refresh()
-          this.router.navigate(['/survey'])
+         
         }
         return throwError(error);
       }),
