@@ -25,8 +25,8 @@ const routes: Routes = [
     component:SurveyComponent,
    
   },
-  { path: '', redirectTo: 'profile', pathMatch: 'full' },
-  { path: '**', redirectTo: 'profile' },
+  { path: '', redirectTo: 'survey', pathMatch: 'full' },
+  { path: '**', redirectTo: 'survey' },
 ];
 
 @NgModule({
