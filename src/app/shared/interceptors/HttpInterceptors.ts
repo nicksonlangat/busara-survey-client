@@ -3,11 +3,12 @@ import { HttpInterceptor, HttpRequest, HttpResponse, HttpHandler, HttpEvent, Htt
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class HttpConfigInterceptor implements HttpInterceptor {
-  constructor(private auth:AuthService) { }
+  constructor(private auth:AuthService, private router:Router) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string = localStorage.getItem('auth_token');
     if (token) {
@@ -28,7 +29,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           console.log(error)
           this.auth.refresh()
-          window.location.reload();
+          this.router.navigate(['/survey'])
         }
         return throwError(error);
       }),
