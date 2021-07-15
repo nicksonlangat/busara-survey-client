@@ -24,7 +24,7 @@
 
 
             <div id="mobileMenu" class="flex flex-col text-white capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center hidden">
-                <a href="/profile" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-white">Profile</a>
+                <a [routerLink]="['/profile']" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-white">Profile</a>
                 <a href="/" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-white">Survey</a>
                 <a href="https://busaracenter.org/about-busara/who-we-are/" class="mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-white">About us</a>
 
@@ -35,7 +35,7 @@
                     transform bg-gray-900 rounded-md hover:bg-blue-600 md:mx-2 md:w-auto" (click)='logout()'>Logout</a>
                     <a *ngIf='!show' class="block w-1/2 px-3 py-2 mx-1 text-sm font-medium 
                     leading-5 text-center text-white transition-colors duration-200 
-                    transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto" href="/login">Login</a>
+                    transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto" [routerLink]="['/login']">Login</a>
                 </div>
             </div>
         </div>
